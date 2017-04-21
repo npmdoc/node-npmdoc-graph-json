@@ -1,0 +1,1602 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >graph-json (v0.1.2)</a>
+</h1>
+<h4>A JSON-format backed graph with preliminary identification algorithms.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graph-json">module graph-json</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DG">
+            function <span class="apidocSignatureSpan">graph-json.</span>DG
+            <span class="apidocSignatureSpan">(struct)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph">
+            function <span class="apidocSignatureSpan">graph-json.</span>DirectedGraph
+            <span class="apidocSignatureSpan">(struct)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UG">
+            function <span class="apidocSignatureSpan">graph-json.</span>UG
+            <span class="apidocSignatureSpan">(struct)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph">
+            function <span class="apidocSignatureSpan">graph-json.</span>UndirectedGraph
+            <span class="apidocSignatureSpan">(struct)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graph-json.</span>DirectedGraph.errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graph-json.</span>DirectedGraph.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graph-json.</span>UndirectedGraph.errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graph-json.</span>UndirectedGraph.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graph-json.DirectedGraph">module graph-json.DirectedGraph</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.DirectedGraph">
+            function <span class="apidocSignatureSpan">graph-json.</span>DirectedGraph
+            <span class="apidocSignatureSpan">(struct)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graph-json.DirectedGraph.</span>errors</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graph-json.DirectedGraph.errors">module graph-json.DirectedGraph.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.errors.ValidationError">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.errors.</span>ValidationError
+            <span class="apidocSignatureSpan">(message, err)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graph-json.DirectedGraph.prototype">module graph-json.DirectedGraph.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.add">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>add
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.addEdge">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>addEdge
+            <span class="apidocSignatureSpan">(name, from, to, dt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.addNode">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>addNode
+            <span class="apidocSignatureSpan">(name, dt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.bfs">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>bfs
+            <span class="apidocSignatureSpan">(to_find, node, DirectedGraph)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.dfs">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>dfs
+            <span class="apidocSignatureSpan">(to_find, node, DirectedGraph)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.edges">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>edges
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.edgesIn">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>edgesIn
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.edgesOut">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>edgesOut
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.getEdge">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>getEdge
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.getNode">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>getNode
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.isAcyclic">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>isAcyclic
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.isTerminal">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>isTerminal
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.numEdges">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>numEdges
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.numNodes">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>numNodes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.DirectedGraph.prototype.tSort">
+            function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>tSort
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graph-json.UndirectedGraph">module graph-json.UndirectedGraph</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph.UndirectedGraph">
+            function <span class="apidocSignatureSpan">graph-json.</span>UndirectedGraph
+            <span class="apidocSignatureSpan">(struct)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">graph-json.UndirectedGraph.</span>errors</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graph-json.UndirectedGraph.errors">module graph-json.UndirectedGraph.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph.errors.ValidationError">
+            function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.errors.</span>ValidationError
+            <span class="apidocSignatureSpan">(message, err)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.graph-json.UndirectedGraph.prototype">module graph-json.UndirectedGraph.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph.prototype.add">
+            function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>add
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph.prototype.addEdge">
+            function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>addEdge
+            <span class="apidocSignatureSpan">(name, n1, n2, dt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph.prototype.addNode">
+            function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>addNode
+            <span class="apidocSignatureSpan">(name, dt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph.prototype.edges">
+            function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>edges
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph.prototype.getEdge">
+            function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>getEdge
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph.prototype.getEdgeBetween">
+            function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>getEdgeBetween
+            <span class="apidocSignatureSpan">(node1, node2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph.prototype.getNode">
+            function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>getNode
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph.prototype.numEdges">
+            function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>numEdges
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.graph-json.UndirectedGraph.prototype.numNodes">
+            function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>numNodes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graph-json" id="apidoc.module.graph-json">module graph-json</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DG" id="apidoc.element.graph-json.DG">
+        function <span class="apidocSignatureSpan">graph-json.</span>DG
+        <span class="apidocSignatureSpan">(struct)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DirectedGraph(struct) {
+    &#x27;use strict&#x27;;
+
+    //having a structure is also optional
+    if (typeof struct !== &#x22;undefined&#x22;) {
+        this.nodes = struct.nodes;
+        this.edges = struct.edges;
+    }
+    else {
+        this.nodes = [];
+        this.edges = [];
+    }
+
+    this.tDirectedGraph = tsort();
+
+    var test = validator.validate({nodes: this.nodes, edges: this.edges}, scheme),
+        uq = areUq(this.edges, &#x27;name&#x27;),
+        x;
+
+    if (test.errors.length &#x3e; 0) {
+        throw new ValidationError(&#x27;Validation of DirectedGraph Failed: &#x27;, test.errors);
+    }
+
+    if (uq.length !== 0) {
+        throw new ValidationError(&#x27;Duplicate Edges Found: &#x27;, uq);
+    }
+
+    x = hangingEdges(this, this.edges);
+    if (x.length !== 0) {
+        throw new ValidationError(&#x27;Hanging Edges Found: &#x27;, x);
+    }
+
+    //initial edge adding to tDirectedGraph
+    for(var i = 0; i &#x3c; this.edges.length; i++) {
+        var x = this.edges[i];
+        var fname = x.from;
+        var tname = x.to;
+        this.tDirectedGraph.add(fname, tname);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph" id="apidoc.element.graph-json.DirectedGraph">
+        function <span class="apidocSignatureSpan">graph-json.</span>DirectedGraph
+        <span class="apidocSignatureSpan">(struct)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DirectedGraph(struct) {
+    &#x27;use strict&#x27;;
+
+    //having a structure is also optional
+    if (typeof struct !== &#x22;undefined&#x22;) {
+        this.nodes = struct.nodes;
+        this.edges = struct.edges;
+    }
+    else {
+        this.nodes = [];
+        this.edges = [];
+    }
+
+    this.tDirectedGraph = tsort();
+
+    var test = validator.validate({nodes: this.nodes, edges: this.edges}, scheme),
+        uq = areUq(this.edges, &#x27;name&#x27;),
+        x;
+
+    if (test.errors.length &#x3e; 0) {
+        throw new ValidationError(&#x27;Validation of DirectedGraph Failed: &#x27;, test.errors);
+    }
+
+    if (uq.length !== 0) {
+        throw new ValidationError(&#x27;Duplicate Edges Found: &#x27;, uq);
+    }
+
+    x = hangingEdges(this, this.edges);
+    if (x.length !== 0) {
+        throw new ValidationError(&#x27;Hanging Edges Found: &#x27;, x);
+    }
+
+    //initial edge adding to tDirectedGraph
+    for(var i = 0; i &#x3c; this.edges.length; i++) {
+        var x = this.edges[i];
+        var fname = x.from;
+        var tname = x.to;
+        this.tDirectedGraph.add(fname, tname);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UG" id="apidoc.element.graph-json.UG">
+        function <span class="apidocSignatureSpan">graph-json.</span>UG
+        <span class="apidocSignatureSpan">(struct)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UndirectedGraph(struct) {
+    &#x27;use strict&#x27;;
+
+    //having a structure is also optional
+    if (typeof struct !== &#x22;undefined&#x22;) {
+        this.nodes = struct.nodes;
+        this.edges = struct.edges;
+    }
+    else {
+        this.nodes = [];
+        this.edges = [];
+    }
+
+    //need to add a scheme validator
+    var uq = areUq(this.edges, &#x27;name&#x27;);
+
+    if (uq.length !== 0) {
+        throw new ValidationError(&#x27;Duplicate Edges Found: &#x27;, uq);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph" id="apidoc.element.graph-json.UndirectedGraph">
+        function <span class="apidocSignatureSpan">graph-json.</span>UndirectedGraph
+        <span class="apidocSignatureSpan">(struct)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UndirectedGraph(struct) {
+    &#x27;use strict&#x27;;
+
+    //having a structure is also optional
+    if (typeof struct !== &#x22;undefined&#x22;) {
+        this.nodes = struct.nodes;
+        this.edges = struct.edges;
+    }
+    else {
+        this.nodes = [];
+        this.edges = [];
+    }
+
+    //need to add a scheme validator
+    var uq = areUq(this.edges, &#x27;name&#x27;);
+
+    if (uq.length !== 0) {
+        throw new ValidationError(&#x27;Duplicate Edges Found: &#x27;, uq);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graph-json.DirectedGraph" id="apidoc.module.graph-json.DirectedGraph">module graph-json.DirectedGraph</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.DirectedGraph" id="apidoc.element.graph-json.DirectedGraph.DirectedGraph">
+        function <span class="apidocSignatureSpan">graph-json.</span>DirectedGraph
+        <span class="apidocSignatureSpan">(struct)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DirectedGraph(struct) {
+    &#x27;use strict&#x27;;
+
+    //having a structure is also optional
+    if (typeof struct !== &#x22;undefined&#x22;) {
+        this.nodes = struct.nodes;
+        this.edges = struct.edges;
+    }
+    else {
+        this.nodes = [];
+        this.edges = [];
+    }
+
+    this.tDirectedGraph = tsort();
+
+    var test = validator.validate({nodes: this.nodes, edges: this.edges}, scheme),
+        uq = areUq(this.edges, &#x27;name&#x27;),
+        x;
+
+    if (test.errors.length &#x3e; 0) {
+        throw new ValidationError(&#x27;Validation of DirectedGraph Failed: &#x27;, test.errors);
+    }
+
+    if (uq.length !== 0) {
+        throw new ValidationError(&#x27;Duplicate Edges Found: &#x27;, uq);
+    }
+
+    x = hangingEdges(this, this.edges);
+    if (x.length !== 0) {
+        throw new ValidationError(&#x27;Hanging Edges Found: &#x27;, x);
+    }
+
+    //initial edge adding to tDirectedGraph
+    for(var i = 0; i &#x3c; this.edges.length; i++) {
+        var x = this.edges[i];
+        var fname = x.from;
+        var tname = x.to;
+        this.tDirectedGraph.add(fname, tname);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graph-json.DirectedGraph.errors" id="apidoc.module.graph-json.DirectedGraph.errors">module graph-json.DirectedGraph.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.errors.ValidationError" id="apidoc.element.graph-json.DirectedGraph.errors.ValidationError">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.errors.</span>ValidationError
+        <span class="apidocSignatureSpan">(message, err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ValidationError(message, err) {
+    &#x27;use strict&#x27;;
+    Error.call(this);
+    this.err = err;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graph-json.DirectedGraph.prototype" id="apidoc.module.graph-json.DirectedGraph.prototype">module graph-json.DirectedGraph.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.add" id="apidoc.element.graph-json.DirectedGraph.prototype.add">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>add
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function () {
+    var nodes = [].slice.call(arguments, 0);
+    for (var i = 0, len = nodes.length; i &#x3c; len; i++) {
+        //make the nodes if they don&#x27;t exist and then make the edge from from and to
+        if (!this.getNode(nodes[i])) {
+            this.addNode(nodes[i]);
+        }
+        if (i &#x3e; 0) {
+            this.addEdge(&#x27;_e&#x27; + count, nodes[i - 1], nodes[i]);
+        }
+        count++;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+// the following creates nodes &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, and &#x27;d&#x27; if they do not exist,
+// and then creates the edges a-&#x3e;b, b-&#x3e;c, and c-&#x3e;d
+t_graph.<span class="apidocCodeKeywordSpan">add</span>(&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;);
+```
+
+### DirectedGraph.prototype.tSort = function ()
+
+Topologically sorts the graph and returns the resulting node array.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.addEdge" id="apidoc.element.graph-json.DirectedGraph.prototype.addEdge">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>addEdge
+        <span class="apidocSignatureSpan">(name, from, to, dt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addEdge = function (name, from, to, dt) {
+    //data (dt) is optional
+    dt = (typeof dt === &#x22;undefined&#x22;) ? null : dt;
+    var nstr;
+    if(dt === null) {
+        nstr = {&#x22;name&#x22;: name,&#x22;from&#x22;: from,&#x22;to&#x22;: to};
+    }
+    else {
+        nstr = {&#x22;name&#x22;: name,&#x22;from&#x22;: from,&#x22;to&#x22;: to,&#x22;data&#x22; : dt};
+    }
+    this.edges.push(nstr);
+    this.tDirectedGraph.add(from, to);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Adds an edge to the graph with an optional parameter containing data.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+t_graph.<span class="apidocCodeKeywordSpan">addEdge</span>(&#x27;A-&#x3e;B&#x27;, &#x27;A&#x27;, &#x27;B&#x27;); // adds edge &#
+x27;A-&#x3e;B&#x27; to the graph from node A to node B
+t_graph.addEdge(&#x27;A-&#x3e;C&#x27;, &#x27;A&#x27;, &#x27;C&#x27;, &#x27;10&#x27;); // adds edge &#x27;A-&#x3e;C&#x27; to the
+graph from node A to node C with data 10
+```
+
+### DirectedGraph.prototype.add = function([nodes...])
+
+Adds any number of nodes to a graph, automatically creating the nodes if they do not exist and creating edges between each adjacent
+ node.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.addNode" id="apidoc.element.graph-json.DirectedGraph.prototype.addNode">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>addNode
+        <span class="apidocSignatureSpan">(name, dt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addNode = function (name, dt) {
+    dt = (typeof dt === &#x22;undefined&#x22;) ? null : dt;
+    var nstr;
+    if(dt === null) {
+        nstr = {&#x22;name&#x22; : name };
+    }
+    else {
+        nstr = {&#x22;name&#x22; : name, &#x22;data&#x22;: dt};
+    }
+    this.nodes.push(nstr);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Adds a node to the graph with an optional parameter containing data.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+t_graph.<span class="apidocCodeKeywordSpan">addNode</span>(&#x27;A&#x27;); // adds node &#x27;A&#x27; to the graph
+t_graph.addNode(&#x27;B&#x27;, &#x27;xyz&#x27;); // adds node &#x27;B&#x27; to the graph, with data xyz
+```
+
+### DirectedGraph.prototype.addEdge = function (name, from, to, [dt])
+
+Adds an edge to the graph with an optional parameter containing data.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.bfs" id="apidoc.element.graph-json.DirectedGraph.prototype.bfs">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>bfs
+        <span class="apidocSignatureSpan">(to_find, node, DirectedGraph)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bfs = function (to_find, node, DirectedGraph) {
+    &#x27;use strict&#x27;;
+    //work on this next
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.dfs" id="apidoc.element.graph-json.DirectedGraph.prototype.dfs">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>dfs
+        <span class="apidocSignatureSpan">(to_find, node, DirectedGraph)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dfs = function (to_find, node, DirectedGraph) {
+    &#x27;use strict&#x27;;
+    var t_1 = (typeof to_find === &#x27;string&#x27;) ? this.getNode(to_find) : to_find,
+        t_2 = (typeof node === &#x27;string&#x27;) ? this.getNode(node) : node,
+        edges_out = DirectedGraph.edgesOut(node),
+        children = [],
+        i = 0,
+        child,
+        found;
+
+    if (t_1 === undefined || t_2 === undefined) {
+        return null;
+    }
+
+    if (t_1.name === t_2.name) {
+        return t_1;
+    }
+
+    for (i = 0; i &#x3c; edges_out.length; i += 1) {
+        children.push(edges_out[i].to);
+    }
+
+    for (i = 0; i &#x3c; children.length; i += 1) {
+        child = children[i];
+        found = DirectedGraph.dfs(to_find, child, DirectedGraph);
+        if (found) {
+            return found;
+        }
+    }
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Performs a depth-first-search on the given graph, searching for `to_find` starting from `node`.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+console.log((t_graph.<span class="apidocCodeKeywordSpan">dfs</span>(&#x27;B&#x27;, &#x27;A&#x27;, t_graph)); // #==&#x3e; prints
+ &#x27;B&#x27; for the test graph (search successful)
+console.log((t_graph.dfs(&#x27;dne&#x27;, &#x27;A&#x27;, t_graph)); // #==&#x3e; prints &#x27;null&#x27; for the test graph (search
+ failed)
+```
+
+### function hangingEdges(graph, edges)
+
+Returns an array of the &#x22;hanging edges&#x22; - edges that either have no `from` or `to` node defined - in the current graph
+ schema.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.edges" id="apidoc.element.graph-json.DirectedGraph.prototype.edges">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>edges
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">edges = function () {
+    return edges;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns the edges array internally stored in `graph-json`.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+var edge_array = t_graph.<span class="apidocCodeKeywordSpan">edges</span>();
+```
+
+### DirectedGraph.prototype.isTerminal = function (node)
+
+Returns `true` if the specified node is ternminal (has no children), and false otherwise.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.edgesIn" id="apidoc.element.graph-json.DirectedGraph.prototype.edgesIn">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>edgesIn
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">edgesIn = function (node) {
+    &#x27;use strict&#x27;;
+    var t = (typeof node === &#x27;string&#x27;) ? this.getNode(node) : node;
+    return (
+        this.edges.filter(function (edge) {
+            return edge.to === t.name;
+        })
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns the number of edges entering a given node.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+var x = t_graph.<span class="apidocCodeKeywordSpan">edgesIn</span>(&#x27;B&#x27;);
+console.log(x[0].from); // #==&#x3e; for the test graph, should print &#x27;A&#x27;
+```
+
+### DirectedGraph.prototype.edgesOut = function (node)
+
+Returns the number of edges exiting a given node.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.edgesOut" id="apidoc.element.graph-json.DirectedGraph.prototype.edgesOut">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>edgesOut
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">edgesOut = function (node) {
+    &#x27;use strict&#x27;;
+    var t = (typeof node === &#x27;string&#x27;) ? this.getNode(node) : node;
+    return (
+        this.edges.filter(function (edge) {
+            return edge.from === t.name;
+        })
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns the number of edges exiting a given node.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+var x = t_graph.<span class="apidocCodeKeywordSpan">edgesOut</span>(&#x27;A&#x27;);
+console.log(x[0].to) // #==&#x3e; for the test graph, should print &#x27;B&#x27;
+```
+
+### DirectedGraph.prototype.getNode = function (id)
+
+Returns a node contained in the graph with the given name (`id`).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.getEdge" id="apidoc.element.graph-json.DirectedGraph.prototype.getEdge">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>getEdge
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEdge = function (id) {
+    &#x27;use strict&#x27;;
+    return (
+        this.edges.filter(function (edge) {
+            return edge.name === id;
+        })[0]
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns an edge contained in the graph with the given name (`id`).
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+var edge = t_graph.<span class="apidocCodeKeywordSpan">getEdge</span>(&#x27;BC&#x27;); // #==&#x3e; assigns the variable edge to
+ the edge of the graph with name &#x27;BC&#x27;
+```
+
+### DirectedGraph.prototype.numEdges = function ()
+
+Returns the number of edges contained in the graph.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.getNode" id="apidoc.element.graph-json.DirectedGraph.prototype.getNode">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>getNode
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNode = function (id) {
+    &#x27;use strict&#x27;;
+    return (
+        this.nodes.filter(function (node) {
+            return node.name === id;
+        })[0]
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns a node contained in the graph with the given name (`id`).
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+var node = t_graph.<span class="apidocCodeKeywordSpan">getNode</span>(&#x27;C&#x27;); // #==&#x3e; assigns the variable node to
+the node of the graph with name &#x27;C&#x27;
+```
+
+### DirectedGraph.prototype.numNodes = function ()
+
+Returns the number of nodes contained in the graph.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.isAcyclic" id="apidoc.element.graph-json.DirectedGraph.prototype.isAcyclic">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>isAcyclic
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAcyclic = function () {
+    try {
+        this.tDirectedGraph.sort();
+    }
+    catch(e) {
+        return false;
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns `true` if the graph is acyclic, `false` otherwise. Uses a topological sort under the hood.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+if(t_graph.<span class="apidocCodeKeywordSpan">isAcyclic</span>()) {
+    //do something
+}
+else {
+    //do something else
+}
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.isTerminal" id="apidoc.element.graph-json.DirectedGraph.prototype.isTerminal">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>isTerminal
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isTerminal = function (node) {
+    &#x27;use strict&#x27;;
+    return this.edgesOut(node).length === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns `true` if the specified node is ternminal (has no children), and false otherwise.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+console.log(t_graph.<span class="apidocCodeKeywordSpan">isTerminal</span>(&#x27;T&#x27;)); // #==&#x3e; prints &#x27;true&#x27;
+for the test graph
+```
+
+### DirectedGraph.prototype.dfs = function (to_find, node, graph)
+
+Performs a depth-first-search on the given graph, searching for `to_find` starting from `node`.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.numEdges" id="apidoc.element.graph-json.DirectedGraph.prototype.numEdges">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>numEdges
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">numEdges = function () {
+    &#x27;use strict&#x27;;
+    return edges.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns the number of edges contained in the graph.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+console.log(t_graph.<span class="apidocCodeKeywordSpan">numEdges</span>()) // #==&#x3e; prints &#x27;2&#x27; for the test graph
+```
+
+### DirectedGraph.prototype.edges = function ()
+
+Returns the edges array internally stored in `graph-json`.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.numNodes" id="apidoc.element.graph-json.DirectedGraph.prototype.numNodes">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>numNodes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">numNodes = function () {
+    &#x27;use strict&#x27;;
+    return nodes.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns the number of nodes contained in the graph.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+console.log(t_graph.<span class="apidocCodeKeywordSpan">numNodes</span>()); // #==&#x3e; prints &#x27;3&#x27; for the test graph
+```
+
+### DirectedGraph.prorotype.getEdge = function (id)
+
+Returns an edge contained in the graph with the given name (`id`).
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.DirectedGraph.prototype.tSort" id="apidoc.element.graph-json.DirectedGraph.prototype.tSort">
+        function <span class="apidocSignatureSpan">graph-json.DirectedGraph.prototype.</span>tSort
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tSort = function () {
+    return this.tDirectedGraph.sort();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Topologically sorts the graph and returns the resulting node array.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+console.log(t_graph.<span class="apidocCodeKeywordSpan">tSort</span>()); //prints a comma-delimited topologically sorted node order
+ of t_graph
+```
+
+### DirectedGraph.prototype.isAcyclic = function ()
+
+Returns `true` if the graph is acyclic, `false` otherwise. Uses a topological sort under the hood.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graph-json.UndirectedGraph" id="apidoc.module.graph-json.UndirectedGraph">module graph-json.UndirectedGraph</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph.UndirectedGraph" id="apidoc.element.graph-json.UndirectedGraph.UndirectedGraph">
+        function <span class="apidocSignatureSpan">graph-json.</span>UndirectedGraph
+        <span class="apidocSignatureSpan">(struct)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UndirectedGraph(struct) {
+    &#x27;use strict&#x27;;
+
+    //having a structure is also optional
+    if (typeof struct !== &#x22;undefined&#x22;) {
+        this.nodes = struct.nodes;
+        this.edges = struct.edges;
+    }
+    else {
+        this.nodes = [];
+        this.edges = [];
+    }
+
+    //need to add a scheme validator
+    var uq = areUq(this.edges, &#x27;name&#x27;);
+
+    if (uq.length !== 0) {
+        throw new ValidationError(&#x27;Duplicate Edges Found: &#x27;, uq);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graph-json.UndirectedGraph.errors" id="apidoc.module.graph-json.UndirectedGraph.errors">module graph-json.UndirectedGraph.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph.errors.ValidationError" id="apidoc.element.graph-json.UndirectedGraph.errors.ValidationError">
+        function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.errors.</span>ValidationError
+        <span class="apidocSignatureSpan">(message, err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ValidationError(message, err) {
+    &#x27;use strict&#x27;;
+    Error.call(this);
+    this.err = err;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.graph-json.UndirectedGraph.prototype" id="apidoc.module.graph-json.UndirectedGraph.prototype">module graph-json.UndirectedGraph.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph.prototype.add" id="apidoc.element.graph-json.UndirectedGraph.prototype.add">
+        function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>add
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function () {
+    var nodes = [].slice.call(arguments, 0);
+    for (var i = 0, len = nodes.length; i &#x3c; len; i++) {
+        //make the nodes if they don&#x27;t exist and then make the edge from from and to
+        if (!this.getNode(nodes[i])) {
+            this.addNode(nodes[i]);
+        }
+        if (i &#x3e; 0) {
+            this.addEdge(&#x27;_e&#x27; + count, nodes[i - 1], nodes[i]);
+        }
+        count++;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+// the following creates nodes &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, and &#x27;d&#x27; if they do not exist,
+// and then creates the edges a-&#x3e;b, b-&#x3e;c, and c-&#x3e;d
+t_graph.<span class="apidocCodeKeywordSpan">add</span>(&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;);
+```
+
+### DirectedGraph.prototype.tSort = function ()
+
+Topologically sorts the graph and returns the resulting node array.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph.prototype.addEdge" id="apidoc.element.graph-json.UndirectedGraph.prototype.addEdge">
+        function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>addEdge
+        <span class="apidocSignatureSpan">(name, n1, n2, dt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addEdge = function (name, n1, n2, dt) {
+    //data (dt) is optional
+    dt = (typeof dt === &#x22;undefined&#x22;) ? null : dt;
+    var nstr;
+    if(dt === null) {
+        nstr = {&#x22;name&#x22;: name,&#x22;between&#x22;: [n1, n2]};
+    }
+    else {
+        nstr = {&#x22;name&#x22;: name,&#x22;between&#x22;: [n1, n2], &#x22;data&#x22; : dt};
+    }
+    this.edges.push(nstr);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Adds an edge to the graph with an optional parameter containing data.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+t_graph.<span class="apidocCodeKeywordSpan">addEdge</span>(&#x27;A-&#x3e;B&#x27;, &#x27;A&#x27;, &#x27;B&#x27;); // adds edge &#
+x27;A-&#x3e;B&#x27; to the graph from node A to node B
+t_graph.addEdge(&#x27;A-&#x3e;C&#x27;, &#x27;A&#x27;, &#x27;C&#x27;, &#x27;10&#x27;); // adds edge &#x27;A-&#x3e;C&#x27; to the
+graph from node A to node C with data 10
+```
+
+### DirectedGraph.prototype.add = function([nodes...])
+
+Adds any number of nodes to a graph, automatically creating the nodes if they do not exist and creating edges between each adjacent
+ node.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph.prototype.addNode" id="apidoc.element.graph-json.UndirectedGraph.prototype.addNode">
+        function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>addNode
+        <span class="apidocSignatureSpan">(name, dt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addNode = function (name, dt) {
+    dt = (typeof dt === &#x22;undefined&#x22;) ? null : dt;
+    var nstr;
+    if(dt === null) {
+        nstr = {&#x22;name&#x22; : name };
+    }
+    else {
+        nstr = {&#x22;name&#x22; : name, &#x22;data&#x22;: dt};
+    }
+    this.nodes.push(nstr);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Adds a node to the graph with an optional parameter containing data.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+t_graph.<span class="apidocCodeKeywordSpan">addNode</span>(&#x27;A&#x27;); // adds node &#x27;A&#x27; to the graph
+t_graph.addNode(&#x27;B&#x27;, &#x27;xyz&#x27;); // adds node &#x27;B&#x27; to the graph, with data xyz
+```
+
+### DirectedGraph.prototype.addEdge = function (name, from, to, [dt])
+
+Adds an edge to the graph with an optional parameter containing data.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph.prototype.edges" id="apidoc.element.graph-json.UndirectedGraph.prototype.edges">
+        function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>edges
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">edges = function () {
+    return edges;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns the edges array internally stored in `graph-json`.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+var edge_array = t_graph.<span class="apidocCodeKeywordSpan">edges</span>();
+```
+
+### DirectedGraph.prototype.isTerminal = function (node)
+
+Returns `true` if the specified node is ternminal (has no children), and false otherwise.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph.prototype.getEdge" id="apidoc.element.graph-json.UndirectedGraph.prototype.getEdge">
+        function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>getEdge
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEdge = function (id) {
+    &#x27;use strict&#x27;;
+    return (
+        this.edges.filter(function (edge) {
+            return edge.name === id;
+        })[0]
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns an edge contained in the graph with the given name (`id`).
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+var edge = t_graph.<span class="apidocCodeKeywordSpan">getEdge</span>(&#x27;BC&#x27;); // #==&#x3e; assigns the variable edge to
+ the edge of the graph with name &#x27;BC&#x27;
+```
+
+### DirectedGraph.prototype.numEdges = function ()
+
+Returns the number of edges contained in the graph.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph.prototype.getEdgeBetween" id="apidoc.element.graph-json.UndirectedGraph.prototype.getEdgeBetween">
+        function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>getEdgeBetween
+        <span class="apidocSignatureSpan">(node1, node2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEdgeBetween = function (node1, node2) {
+    return (
+        this.edges.filter(function (edge) {
+            return edge.between[0] === node1 &#x26;&#x26; edge.between[1] === node2;
+        })[0]
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph.prototype.getNode" id="apidoc.element.graph-json.UndirectedGraph.prototype.getNode">
+        function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>getNode
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNode = function (id) {
+    &#x27;use strict&#x27;;
+    return (
+        this.nodes.filter(function (node) {
+            return node.name === id;
+        })[0]
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns a node contained in the graph with the given name (`id`).
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+var node = t_graph.<span class="apidocCodeKeywordSpan">getNode</span>(&#x27;C&#x27;); // #==&#x3e; assigns the variable node to
+the node of the graph with name &#x27;C&#x27;
+```
+
+### DirectedGraph.prototype.numNodes = function ()
+
+Returns the number of nodes contained in the graph.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph.prototype.numEdges" id="apidoc.element.graph-json.UndirectedGraph.prototype.numEdges">
+        function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>numEdges
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">numEdges = function () {
+    &#x27;use strict&#x27;;
+    return edges.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns the number of edges contained in the graph.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+console.log(t_graph.<span class="apidocCodeKeywordSpan">numEdges</span>()) // #==&#x3e; prints &#x27;2&#x27; for the test graph
+```
+
+### DirectedGraph.prototype.edges = function ()
+
+Returns the edges array internally stored in `graph-json`.
+
+Example:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.graph-json.UndirectedGraph.prototype.numNodes" id="apidoc.element.graph-json.UndirectedGraph.prototype.numNodes">
+        function <span class="apidocSignatureSpan">graph-json.UndirectedGraph.prototype.</span>numNodes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">numNodes = function () {
+    &#x27;use strict&#x27;;
+    return nodes.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns the number of nodes contained in the graph.
+
+Example:
+```js
+var g = JSON.parse(fs.readFileSync(&#x27;./graph.json&#x27;));
+var t_graph = new DirectedGraph(g);
+
+console.log(t_graph.<span class="apidocCodeKeywordSpan">numNodes</span>()); // #==&#x3e; prints &#x27;3&#x27; for the test graph
+```
+
+### DirectedGraph.prorotype.getEdge = function (id)
+
+Returns an edge contained in the graph with the given name (`id`).
+
+Example:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
